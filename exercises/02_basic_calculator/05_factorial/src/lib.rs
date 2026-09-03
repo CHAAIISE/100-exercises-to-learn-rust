@@ -1,5 +1,14 @@
 // Define a function named `factorial` that, given a non-negative integer `n`,
 // returns `n!`, the factorial of `n`.
+
+fn factorial(n : u64) -> u64{
+    let mut sol : u64 = 1;
+    for i in 1..=n {
+        sol *= i;
+    }
+    sol
+}
+
 //
 // The factorial of `n` is defined as the product of all positive integers up to `n`.
 // For example, `5!` (read "five factorial") is `5 * 4 * 3 * 2 * 1`, which is `120`.
