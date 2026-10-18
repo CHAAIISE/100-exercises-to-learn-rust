@@ -1,7 +1,18 @@
 // TODO: Implement the `From` trait for the `WrappingU32` type to make `example` compile.
 
+use std::ops::Add;
+
+#[derive(Debug, PartialEq, Clone, Copy)]
 pub struct WrappingU32 {
     value: u32,
+}
+
+impl From<u32> for WrappingU32 {
+    fn from(v : u32) -> Self {
+        WrappingU32 { 
+            value : v
+        }
+    }
 }
 
 fn example() {
