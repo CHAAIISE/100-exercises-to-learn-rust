@@ -1,7 +1,7 @@
 // TODO: Flesh out the `WeekTemperatures` struct and its method implementations to pass the tests.
 
 pub struct WeekTemperatures {
-    // TODO
+    tab: [Option<i32>; 7],
 }
 
 pub enum Weekday {
@@ -16,15 +16,33 @@ pub enum Weekday {
 
 impl WeekTemperatures {
     pub fn new() -> Self {
-        todo!()
+        WeekTemperatures{ tab: [None, None, None, None, None, None, None] }
     }
 
     pub fn get_temperature(&self, day: Weekday) -> Option<i32> {
-        todo!()
+        match day {
+            Weekday::Monday => Some(self.tab[0]?),
+            Weekday::Tuesday => Some(self.tab[1]?),
+            Weekday::Wednesday => Some(self.tab[2]?),
+            Weekday::Thursday => Some(self.tab[3]?),
+            Weekday::Friday => Some(self.tab[4]?),
+            Weekday::Saturday => Some(self.tab[5]?),
+            Weekday::Sunday => Some(self.tab[6]?),
+    
+        }
     }
 
     pub fn set_temperature(&mut self, day: Weekday, temperature: i32) {
-        todo!()
+        match day {
+            Weekday::Monday => self.tab[0] = Some(temperature),
+            Weekday::Tuesday => self.tab[1] = Some(temperature),
+            Weekday::Wednesday => self.tab[2] = Some(temperature),
+            Weekday::Thursday => self.tab[3] = Some(temperature),
+            Weekday::Friday => self.tab[4] = Some(temperature),
+            Weekday::Saturday => self.tab[5] = Some(temperature),
+            Weekday::Sunday => self.tab[6] = Some(temperature),
+    
+        }
     }
 }
 
